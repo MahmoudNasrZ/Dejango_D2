@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}  {# Load static files #}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/home/home.css' %}">  
+{% endblock %}
+{% block title %}Home - My Django App{% endblock %} 
+{% block content %}
+    <div class="container">
+        <h1 class="homeHeading">Welcome to My Django App Home</h1>
+        <p class="homeHeading">Explore Django, build projects, and have fun coding!</p>
+    </div>
+{% endblock %}
+

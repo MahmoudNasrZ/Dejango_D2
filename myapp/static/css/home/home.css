@@ -1,0 +1,14 @@
+
+.container .homeHeading {
+    color: green;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.homeHeading:hover {
+    color: green;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}

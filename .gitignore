@@ -1,0 +1,25 @@
+# Virtual environment
+venv/
+env/
+myDjangoEnv/
+
+
+# Byte-compiled and cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment variables and secrets
+.env
+
+# Database and migration files (optional)
+# db.sqlite3
+# *.sqlite3
+
+# Static and media files (optional)
+staticfiles/
+media/
+
+# VS Code and JetBrains IDEs
+.vscode/
+.idea/

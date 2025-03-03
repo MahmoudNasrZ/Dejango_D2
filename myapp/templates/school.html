@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}  {# Load static files #}
+{% load custom_filters %}  {# Load custom filter for multiplication #}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/contact/contact.css' %}">
+{% endblock %}
+
+{% comment %} {% block title %}Contact - {{ class_id }}{% endblock %} {% endcomment %}
+
+{% block content %}
+    <h1>Contact Us</h1>
+    {% comment %} <h2>Name: {{ schools.length }}</h2> {% endcomment %}
+
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>SchoolName</th>
+                <th>ClassNumber</th>
+                <th>Area</th>  {# Corrected Area Calculation #}
+                {% comment %} <th>operation</th>  {# Corrected Area Calculation #} {% endcomment %}
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for school in schools %}
+            <tr>
+                <td>{{ school.id }}</td>
+                <td>{{ school.name }}</td>
+                <td>{{ school.number_of_classes }}</td>
+                <td>{{ school.computed_area}}</td>  {# Uses the custom filter #}
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4" class="text-center">No class areas found</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+        {% comment %} <script src="{% static 'js/test.js' %}"></script> {% endcomment %}
+{% endblock %}

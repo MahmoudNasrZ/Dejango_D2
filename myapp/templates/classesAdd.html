@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Add Class{% endblock %}
+
+{% block content %}
+    <h1>Add a New Class</h1>
+    <form method="post" action="{% url 'add_class' %}">  <!-- Correct URL for classes -->
+        {% csrf_token %}
+        
+        <div class="mb-3">
+            <label for="school_id" class="form-label">School</label>
+            <select class="form-control" name="school_id" required>
+                {% for school in schools %}
+                    <option value="{{ school.id }}">{{ school.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="class_name" class="form-label">Class Name</label>
+            <input type="text" class="form-control" name="class_name" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="area" class="form-label">Class Area (e.g., 10x20)</label>
+            <input type="text" class="form-control" name="area" required>
+        </div>
+
+        <button type="submit" class="btn btn-success">Save Class</button>
+    </form>
+{% endblock %}
